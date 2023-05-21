@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Man-O-Wear</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/maincss.css" />
+    <script src="index.js"></script>
+  </head>
+
+  <body>
+    <!--Header Section (Brand Name and Navbar)-->
+    <header>
+      <div>
+        <img src="/images/logo.png" width="30px" />
+        <a href="/aboutus" class="title">MAN-O-WEAR</a>
+      </div>
+      <nav class="navbar">
+        <a class="active" href="#">HOME</a>
+
+        <div class="dropdown">
+          <a href="/views/grooming" class="dropbtn">GROOMING</a>
+          <!-- <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div> -->
+        </div>
+
+        <div class="dropdown">
+          <a href="/views/gyming" class="dropbtn">GYMMING</a>
+          <!-- <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div> -->
+        </div>
+        <div class="dropdown">
+          <a href="/views/review">REVIEWS</a>
+        </div>
+      </nav>
+
+      <!--Shopping Cart and Search Bar and Account-->
+      <div class="icons">
+        <form action="/search" method="GET">
+          <input
+            type="text"
+            size="15px"
+            name="query"
+            id="searchbar"
+            style="
+              border: black solid 1px;
+              border-radius: 5px;
+              height: 0.8cm;
+              padding-left: 30px;
+            "
+          />
+          <a href="/views/cart" class="fas fa-shopping-cart"></a>
+
+          <a href="/views/loginpage"><i class="fas fa-user"></i></a>
+        </form>
+      </div>
+    </header>
+
+    <!--Main Home Page-->
+    <section
+      class="home"
+      id="home"
+      style="padding: 0px; position: absolute; top: 5%"
+    >
+      <div class="content">
+        <h3 class="centered" style="color: white; font-size: 8rem">
+          LOOK GOOD,
+          <span style="color: var(--red); font-size: 8rem">FEEL GREAT</span>
+        </h3>
+        <img src="images/trimmer.jpg" style="width: 100%; height: 50%" />
+      </div>
+      <div class="content">
+        <h3 class="centeredl" style="color: var(--red); font-size: 7rem">
+          MORE POWER,
+          <span style="color: white; font-size: 7rem">NO SIDE EFFECTS</span>
+        </h3>
+        <img src="images/gym.jpg" style="width: 100%; height: 50%" />
+      </div>
+      <div>
+        <section class="footer" style="background-color: black">
+          <div class="container-fluid" style="background-color: black">
+            <a
+              onclick="facebookId()"
+              class="fa-brands fa-facebook-square"
+              aria-hidden="true"
+              style="color: aqua"
+            ></a>
+            <a
+              onclick="twitterId()"
+              class="fa-brands fa-twitter"
+              style="color: aqua"
+            ></a>
+            <a
+              onclick="emailId()"
+              class="fa-brands fa-envelope"
+              style="color: aqua"
+            ></a>
+            <a
+              onclick="instaId()"
+              class="fa-brands fa-instagram"
+              style="color: aqua"
+            ></a
+            ><br />
+
+            <a href="AboutUs/aboutus.html" style="color: aqua">About Us</a>
+            <a href="FAQ PAGE/faq.html" style="color: aqua">FAQ</a>
+            <a href="Term of use/termsofuse.html" style="color: aqua"
+              >Terms of Use</a
+            >
+            <a href="Privacy/privacy.html" style="color: aqua">Privacy Policy</a
+            ><br />
+
+            <p style="color: aqua">© Copyright Man-O-Wear</p>
+          </div>
+        </section>
+      </div>
+      <!-- <script>
+            let fProducts = document.getElementById('featuredproducts');
+            let reviews = decodeU
+
+        </script> -->
+    </section>
+  </body>
+</html>

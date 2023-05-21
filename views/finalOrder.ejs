@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="widht=device-width, initial-scalee=1.0" />
+    <title>Man-O-Wear</title>
+    <link rel="stylesheet" href="/css/maincss.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        finalEmail = document.getElementById('confirmationEmail').value
+
+    </script>
+
+    <script>
+        const orderButton = document.getElementById('finalbutton');
+
+orderButton.addEventListener('click', function() {
+  alert('Your order has been placed!');
+});
+    </script>
+
+</head>
+
+<body>
+    <!--Header Section (Brand Name and Navbar)-->
+    <header>
+        <div>
+            <img src="/images/logo.png" width="30px" />
+            <a href="/aboutus" class="title">MAN-O-WEAR</a>
+        </div>
+        <nav class="navbar">
+            <a href="/index">HOME</a>
+
+            <div class="dropdown">
+                <a href="/views/grooming" class="dropbtn">GROOMING</a>
+            </div>
+
+            <div class="dropdown">
+                <a href="/views/gyming" class="dropbtn">GYMMING</a>
+            </div>
+
+            <div class="dropdown">
+                <a href="/views/review" class="dropbtn">REVIEWS</a>
+            </div>
+        </nav>
+
+        <!--Shopping Cart and Search Bar and Account-->
+        <div class="icons">
+            <input type="text" size="15px" name="search" id="searchbar" style="
+            border: black solid 1px;
+            border-radius: 5px;
+            height: 0.8cm;
+            padding-left: 30px;
+          " />
+            <i class="fas fa-search" id="search-icon"></i>
+            <i class="fas fa-shopping-cart"></i>
+            <a href="/views/loginpage"><i class="fas fa-user"></i></a>
+        </div>
+
+    </header>
+
+
+
+    <section class="menu" id="menu" style="padding: 70px">
+        <div class="box-container menu">
+          <div class="box" style="padding: 50px;">
+            <div>
+                <h2 style="font-size: xx-large; padding-bottom: 20px;">SELECT YOUR PAYMENT METHOD</h2>
+                <ul style="font-size: large; padding-bottom: 20px; padding-left: 30px;">
+                    <li >CASH ON DELIVERY</li>
+                    <li >ONLINE PAYMENT</li>
+                    <li >EMI</li>
+                </ul>
+                <form method="post" action="/finalOrder">
+                    <input type="email" id="confirmationEmail" name="confirmationEmail"
+                        style="background-color: aquamarine; padding: 5px; border: solid; border-radius: 5px;" placeholder="Enter email for confirmation" size="30"
+                    <a href=""><button style="padding: 7px; color: white; background-color: black; border-radius: 5px;">Send
+                        mail</button></a>
+                    <!-- <button type="button" onclick="alert()">CONFIRM</button> -->
+                </form>
+        
+        
+                <!-- <form method="post" action="/finalOrder">
+                    <input type="email" name="confirmationEmail" style="background-color: aquamarine;" />PLEASE ENTER YOUR EMAIL
+                    FOR CONFIRMATION
+                    <a
+                        href="mailto:confirmationEmail?subject=Your%20Order%20has%20been%20placed&body=Dear%20customer,%20Thank%20you%20for%20placing%20your%20order%20with%20us.%20Your%20order%20is%20confirmed.">Send
+                        mail</a> 
+        
+        
+                    <button onclick="alert(confirmationEmail)">CONFIRM</button>
+                </form> -->
+        
+        
+            </div>
+        </div>
+        </div>
+        </section>
+
+
+
+        <!-- <form method="post" action="/finalOrder">
+            <input type="email" name="confirmationEmail" style="background-color: aquamarine;" />PLEASE ENTER YOUR EMAIL
+            FOR CONFIRMATION
+            <a
+                href="mailto:confirmationEmail?subject=Your%20Order%20has%20been%20placed&body=Dear%20customer,%20Thank%20you%20for%20placing%20your%20order%20with%20us.%20Your%20order%20is%20confirmed.">Send
+                mail</a> 
+
+
+            <button onclick="alert(confirmationEmail)">CONFIRM</button>
+        </form> -->
+
+
+
+
+
+
+
+        <section class="menu" id="menu">
+
+            <div class="box-container menu">
+        
+              <div class="box">
+        
+                <div class="content" style="font-size: large; padding: 20px;">
+                  <% var finalBill=0;%>
+        
+                    <% for(let i=0; i<itemName.length; i++) { %>
+        
+        
+                      <h3 style="padding-top: 20px; padding-right: 20px; padding-left: 20px; padding-bottom: 10px; background-color: black; border-color: white; border: solid; border-radius: 20px; color: white;">
+        
+                        <form action="/remove-from-cart" method="POST" style="padding-left: 50px;">
+                          <%= itemName[i] %>: <%= quantity[i] %> x <%= itemPrice[i] %>
+                          <input type="hidden" name="itemName" value="
+                    <%= itemName[i] %>
+                    " />
+                          <input type="hidden" name="itemPrice" value="
+                    <%= itemPrice[i] %>
+                    " />
+                          <input type="hidden" name="quantity" value="1" min="1" />
+                          <button type="submit" style="color: white; background-color: red; padding: 7px; border-radius: 4px;">
+                            X
+                          </button>
+                        </form>
+                      </h3>
+                      <% finalBill=finalBill + itemPrice[i] %>
+        
+        
+        
+        
+                        <% } %>
+        
+        
+                </div>
+              </div>
+            </div>
+
+        <div class="box">
+            <div class="content" style="padding: 40px; font-size: large;">
+            <h3>Final Bill :
+              <%= finalBill %>
+            </h3>
+            <a href="/index"><button id ="finalbutton" style="padding: 7px; color: white; background-color: blue; border-radius: 5px;">Place your order</button></a>
+          </div>
+          </div>
+
+    </section>
+
+
+
+    <section class="footer" style="background-color: black">
+        <div class="container-fluid" style="background-color: black">
+            <a onclick="facebookId()" class="fa-brands fa-facebook-square" aria-hidden="true" style="color: aqua"></a>
+            <a onclick="twitterId()" class="fa-brands fa-twitter" style="color: aqua"></a>
+            <a onclick="emailId()" class="fa-brands fa-envelope" style="color: aqua"></a>
+            <a onclick="instaId()" class="fa-brands fa-instagram" style="color: aqua"></a><br />
+
+            <a href="AboutUs/aboutus.html" style="color: aqua">About Us</a>
+            <a href="FAQ PAGE/faq.html" style="color: aqua">FAQ</a>
+            <a href="Term of use/termsofuse.html" style="color: aqua">Terms of Use</a>
+            <a href="Privacy/privacy.html" style="color: aqua">Privacy Policy</a><br />
+
+            <p style="color: aqua">© Copyright Man-O-Wear</p>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!--Custom js file link-->
+    <script src="website.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Man-O-Wear</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/maincss.css" />
+    <script src="index.js"></script>
+    <style>
+      body {
+        margin-top: 20px;
+        background-color: white;
+      }
+
+      .be-comment-block {
+        margin-bottom: 50px !important;
+        border: 1px solid #edeff2;
+        border-radius: 2px;
+        padding: 50px 70px;
+        border: 1px solid #ffffff;
+      }
+
+      .comments-title {
+        font-size: 16px;
+        color: #262626;
+        margin-bottom: 15px;
+        font-family: "Conv_helveticaneuecyr-bold";
+      }
+
+      .be-img-comment {
+        width: 60px;
+        height: 60px;
+        float: left;
+        margin-bottom: 15px;
+      }
+
+      .be-ava-comment {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+      }
+
+      .be-comment-content {
+        margin-left: 80px;
+      }
+
+      .be-comment-content span {
+        display: inline-block;
+        width: 49%;
+        margin-bottom: 15px;
+      }
+
+      .be-comment-name {
+        font-size: 20px;
+      }
+
+      .be-comment-content a {
+        color: #383b43;
+      }
+
+      .be-comment-content span {
+        display: inline-block;
+        width: 49%;
+        margin-bottom: 15px;
+      }
+
+      .be-comment-time {
+        text-align: right;
+      }
+
+      .be-comment-time {
+        font-size: 11px;
+        color: white;
+      }
+
+      .be-comment-text {
+        font-size: 15px;
+        line-height: 18px;
+        color: white;
+        display: block;
+        background: rgb(18, 18, 18);
+        border: 1px solid black;
+        border-radius: 25px;
+        padding: 15px 20px 20px 20px;
+      }
+
+      .form-group.fl_icon .icon {
+        position: absolute;
+        top: 1px;
+        left: 16px;
+        width: 48px;
+        height: 48px;
+        background: #f6f6f7;
+        color: #b5b8c2;
+        text-align: center;
+        line-height: 50px;
+        -webkit-border-top-left-radius: 2px;
+        -webkit-border-bottom-left-radius: 2px;
+        -moz-border-radius-topleft: 2px;
+        -moz-border-radius-bottomleft: 2px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+      }
+
+      .form-group .form-input {
+        font-size: 13px;
+        line-height: 50px;
+        font-weight: 400;
+        color: #272728;
+        width: 100%;
+        height: 50px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border: 1px solid #edeff2;
+        border-radius: 15px;
+      }
+
+      .form-group.fl_icon .form-input {
+        padding-left: 20px;
+      }
+
+      .form-group textarea.form-input {
+        height: 150px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--Header Section (Brand Name and Navbar)-->
+    <header>
+      <div>
+        <img src="/images/logo.png" width="30px" />
+        <a href="/aboutus" class="title">MAN-O-WEAR</a>
+      </div>
+      <nav class="navbar">
+        <a href="/index">HOME</a>
+
+        <div class="dropdown">
+          <a href="/views/grooming" class="dropbtn">GROOMING</a>
+          <!-- <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div> -->
+        </div>
+
+        <div class="dropdown">
+          <a href="/views/gyming" class="dropbtn">GYMMING</a>
+          <!-- <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div> -->
+        </div>
+        <div class="dropdown">
+          <a href="" class="active">REVIEWS</a>
+        </div>
+      </nav>
+
+      <!--Shopping Cart and Search Bar and Account-->
+      <div class="icons">
+        <form action="/search" method="GET">
+          <input
+            type="text"
+            size="15px"
+            name="query"
+            id="searchbar"
+            style="
+              border: black solid 1px;
+              border-radius: 5px;
+              height: 0.8cm;
+              padding-left: 30px;
+            "
+          />
+
+          <a href="/views/loginpage"><i class="fas fa-user"></i></a>
+        </form>
+      </div>
+    </header>
+
+    <!--Main Home Page-->
+    <section
+      class="home"
+      id="home"
+      style="
+        padding-top: 100px;
+        padding-right: 100px;
+        padding-left: 100px;
+        position: absolute;
+        top: 5%;
+      "
+    >
+      <link
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+        rel="stylesheet"
+      />
+      <div
+        class="container"
+        style="
+          padding-left: 0px;
+          padding-right: 0px;
+          padding-bottom: 0px;
+          padding-top: 10px;
+        "
+      >
+        <% for (let i=0; i < reviewName.length; i++) { %>
+        <div class="be-comment">
+          <div class="be-img-comment">
+            <a href="blog-detail-2.html">
+              <img
+                src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                alt=""
+                class="be-ava-comment"
+              />
+            </a>
+          </div>
+          <div class="be-comment-content">
+            <span class="be-comment-name" style="font-size: x-large">
+              <a href="blog-detail-2.html"> <%= reviewName[i] %> </a>
+            </span>
+            <p class="be-comment-text"><%= reviewContent[i] %></p>
+          </div>
+        </div>
+        <br /><br /><br />
+        <% } %>
+
+        <h1 style="font-size: xx-large">Publish Your Reviews!!</h1>
+
+        <form method="post" action="/add-review" class="form-block">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6">
+              <div class="form-group fl_icon">
+                <div class="icon"><i class="fa fa-user"></i></div>
+                <input
+                  class="form-input"
+                  type="text"
+                  placeholder="Your name"
+                  name="NAME"
+                />
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 fl_icon">
+              <div class="form-group fl_icon">
+                <div class="icon"><i class="fa fa-envelope-o"></i></div>
+                <input
+                  class="form-input"
+                  type="text"
+                  placeholder="Your email"
+                  name="EMAIL"
+                />
+              </div>
+            </div>
+            <div class="col-xs-12" style="padding-left: 10px">
+              <div class="form-group">
+                <textarea
+                  class="form-input"
+                  required=""
+                  placeholder="Your text"
+                  name="CONTENT"
+                ></textarea>
+              </div>
+            </div>
+            <button class="btn btn-primary pull-right" type="submit">
+              submit
+            </button>
+          </div>
+        </form>
+      </div>
+      <br /><br /><br /><br /><br /><br />
+      <section
+        class="footer"
+        style="
+          background-color: black;
+          padding-left: unset;
+          padding-right: unset;
+        "
+      >
+        <div class="container-fluid" style="background-color: black">
+          <a
+            onclick="facebookId()"
+            class="fa-brands fa-facebook-square"
+            aria-hidden="true"
+            style="color: aqua"
+          ></a>
+          <a
+            onclick="twitterId()"
+            class="fa-brands fa-twitter"
+            style="color: aqua"
+          ></a>
+          <a
+            onclick="emailId()"
+            class="fa-brands fa-envelope"
+            style="color: aqua"
+          ></a>
+          <a
+            onclick="instaId()"
+            class="fa-brands fa-instagram"
+            style="color: aqua"
+          ></a
+          ><br />
+
+          <a href="AboutUs/aboutus.html" style="color: aqua">About Us</a>
+          <a href="FAQ PAGE/faq.html" style="color: aqua">FAQ</a>
+          <a href="Term of use/termsofuse.html" style="color: aqua"
+            >Terms of Use</a
+          >
+          <a href="Privacy/privacy.html" style="color: aqua">Privacy Policy</a
+          ><br />
+
+          <p style="color: aqua">© Copyright Man-O-Wear</p>
+        </div>
+      </section>
+    </section>
+
+    <!-- <script>
+            let fProducts = document.getElementById('featuredproducts');
+            let reviews = decodeU
+
+        </script> -->
+  </body>
+</html>

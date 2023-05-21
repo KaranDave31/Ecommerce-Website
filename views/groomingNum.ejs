@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="widht=device-width, initial-scalee=1.0" />
+  <title>Man-O-Wear</title>
+  <link rel="stylesheet" href="/css/maincss.css" />
+  <link rel="stylesheet" href="/css/styles.css" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    function toggleDropdown() {
+      document.getElementById("dropdown").classList.toggle("show");
+    }
+
+    window.onclick = function (event) {
+      if (!event.target.matches(".dropbtn")) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains("show")) {
+            openDropdown.classList.remove("show");
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    body {
+      background: linear-gradient(to bottom, black, rgb(39, 148, 148));
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropbtn {
+      background-color: rgb(217, 229, 229);
+
+      color: black;
+      padding: 5px 15px;
+      font-size: 15px;
+
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      z-index: 1;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: rgb(9, 199, 199);
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content button {
+      background-color: inherit;
+      color: white;
+      padding: 5px;
+      font-size: 13px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      margin: 5px 0;
+    }
+
+    .show {
+      display: block;
+    }
+
+    .price {
+      padding-right: 130px;
+    }
+
+    select {
+      padding: 5px;
+      background-position: center right;
+      background-repeat: no-repeat;
+      background-color: black;
+      border: 1px solid;
+      border-radius: 4px;
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+      color: white;
+      font-size: inherit;
+      margin: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+
+<body>
+  <!--Header Section (Brand Name and Navbar)-->
+  <header>
+    <div>
+      <img src="/images/logo.png" width="30px" />
+      <a href="/aboutus" class="title">MAN-O-WEAR</a>
+    </div>
+    <nav class="navbar">
+      <a href="/index">HOME</a>
+
+      <div class="dropdown">
+        <a class="active" href="/views/grooming" class="dropbtn">GROOMING</a>
+        <!-- <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div> -->
+      </div>
+
+      <div class="dropdown">
+        <a href="/views/gyming" class="">GYMMING</a>
+        <!-- <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div> -->
+      </div>
+      <div class="dropdown">
+        <a href="/views/review">REVIEWS</a>
+      </div>
+    </nav>
+
+    <!--Shopping Cart and Search Bar and Account-->
+    <div class="icons">
+      <input type="text" size="15px" name="search" id="searchbar" style="
+            border: black solid 1px;
+            border-radius: 5px;
+            height: 0.8cm;
+            padding-left: 30px;
+          " />
+      <a href="/views/cart" class="fas fa-shopping-cart"></a>
+
+      <a href="/views/loginpage"><i class="fas fa-user"></i></a>
+    </div>
+  </header>
+
+  <!--Menu section starts-->
+
+  <!-- <form method="post" action="/views/grooming/sortedAlpha">
+    <button type="submit">Sort by letter</button>
+  </form>
+
+  <form method="post" action="/views/grooming/sortedNum">
+    <button type="submit">Sort by cost</button>
+  </form> -->
+
+  <div class="dropdown">
+    <button class="dropbtn" onclick="toggleDropdown()">Sort &darr;</button>
+    <div class="dropdown-content" id="dropdown">
+      <form method="post" action="/views/groomingAlpha">
+        <button type="submit">Alphabetical</button>
+      </form>
+      <form method="post" action="/views/groomingNum">
+        <button type="submit">Cost</button>
+      </form>
+    </div>
+  </div>
+
+  <section class="menu" id="menu">
+    <div class="box-container menu">
+      <div class="box">
+        <div class="image">
+          <img src="/images/groom1.jpg" alt="" />
+          <form action="/add-to-cart" method="POST">
+            <input type="hidden" name="itemName" value="
+            <%= names[0] %>
+            " />
+            <input type="hidden" name="itemPrice" value="
+            <%= cost[0] %>
+            " />
+            <input type="number" name="quantity" value="1" min="1" />
+            <button type="submit">
+              <a class="fas fa-shopping-cart"></a>
+            </button>
+          </form>
+        </div>
+        <div class="content">
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+
+          <h3>
+            <%= names[0] %>
+          </h3>
+
+          <span class="price">
+            <%= cost[0]%>
+          </span>
+          <select>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="image">
+          <img src="/images/groom5.jpg" alt="" />
+          <form action="/add-to-cart" method="POST">
+            <input type="hidden" name="itemName" value="
+            <%= names[1] %>
+            " />
+            <input type="hidden" name="itemPrice" value="
+            <%= cost[1] %>
+            " />
+            <input type="number" name="quantity" value="1" min="1" />
+            <button type="submit">
+              <a class="fas fa-shopping-cart"></a>
+            </button>
+          </form>
+        </div>
+        <div class="content">
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h3>
+            <%= names[1] %>
+          </h3>
+
+          <span class="price">
+            <%= cost[1]%>
+          </span>
+          <select>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="image">
+          <img src="/images/groom3.jpg" alt="" />
+          <form action="/add-to-cart" method="POST">
+            <input type="hidden" name="itemName" value="
+            <%= names[2] %>
+            " />
+            <input type="hidden" name="itemPrice" value="
+            <%= cost[2] %>
+            " />
+            <input type="number" name="quantity" value="1" min="1" />
+            <button type="submit">
+              <a class="fas fa-shopping-cart"></a>
+            </button>
+          </form>
+        </div>
+        <div class="content">
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h3>
+            <%= names[2] %>
+          </h3>
+
+          <span class="price">
+            <%= cost[2]%>
+          </span>
+          <select>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="image">
+          <img src="/images/groom9.jpg" alt="" />
+          <form action="/add-to-cart" method="POST">
+            <input type="hidden" name="itemName" value="
+            <%= names[3] %>
+            " />
+            <input type="hidden" name="itemPrice" value="
+            <%= cost[3] %>
+            " />
+            <input type="number" name="quantity" value="1" min="1" />
+            <button type="submit">
+              <a class="fas fa-shopping-cart"></a>
+            </button>
+          </form>
+        </div>
+        <div class="content">
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h3>
+            <%= names[3] %>
+          </h3>
+
+          <span class="price">
+            <%= cost[3]%>
+          </span>
+          <select>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="image">
+          <img src="/images/groom8.jpg" alt="" />
+          <form action="/add-to-cart" method="POST">
+            <input type="hidden" name="itemName" value="
+            <%= names[4] %>
+            " />
+            <input type="hidden" name="itemPrice" value="
+            <%= cost[4] %>
+            " />
+            <input type="number" name="quantity" value="1" min="1" />
+            <button type="submit">
+              <a class="fas fa-shopping-cart"></a>
+            </button>
+          </form>
+        </div>
+        <div class="content">
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h3>
+            <%= names[4] %>
+          </h3>
+
+          <span class="price">
+            <%= cost[4]%>
+          </span>
+          <select>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="image">
+          <img src="/images/groom6.jpg" alt="" />
+          <form action="/add-to-cart" method="POST">
+            <input type="hidden" name="itemName" value="
+            <%= names[5] %>
+            " />
+            <input type="hidden" name="itemPrice" value="
+            <%= cost[5] %>
+            " />
+            <input type="number" name="quantity" value="1" min="1" />
+            <button type="submit">
+              <a class="fas fa-shopping-cart"></a>
+            </button>
+          </form>
+        </div>
+        <div class="content">
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+          <h3>
+            <%= names[5] %>
+          </h3>
+
+          <span class="price">
+            <%= cost[5]%>
+          </span>
+          <select>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="image">
+          <img src="/images/groom2.jpg" alt="" />
+          <form action="/add-to-cart" method="POST">
+            <input type="hidden" name="itemName" value="
+            <%= names[6] %>
+            " />
+            <input type="hidden" name="itemPrice" value="
+            <%= cost[6] %>
+            " />
+            <input type="number" name="quantity" value="1" min="1" />
+            <button type="submit">
+              <a class="fas fa-shopping-cart"></a>
+            </button>
+          </form>
+        </div>
+        <div class="content">
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+          <h3>
+            <%= names[6] %>
+          </h3>
+
+          <span class="price">
+            <%= cost[6]%>
+          </span>
+          <select>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="image">
+          <img src="/images/groom7.jpg" alt="" />
+          <form action="/add-to-cart" method="POST">
+            <input type="hidden" name="itemName" value="
+            <%= names[7] %>
+            " />
+            <input type="hidden" name="itemPrice" value="
+            <%= cost[7] %>
+            " />
+            <input type="number" name="quantity" value="1" min="1" />
+            <button type="submit">
+              <a class="fas fa-shopping-cart"></a>
+            </button>
+          </form>
+        </div>
+        <div class="content">
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+          <h3>
+            <%= names[7] %>
+          </h3>
+
+          <span class="price">
+            <%= cost[7]%>
+          </span>
+          <select>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="image">
+          <img src="/images/groom4.png" alt="" />
+          <form action="/add-to-cart" method="POST">
+            <input type="hidden" name="itemName" value="
+            <%= names[8] %>
+            " />
+            <input type="hidden" name="itemPrice" value="
+            <%= cost[8] %>
+            " />
+            <input type="number" name="quantity" value="1" min="1" />
+            <button type="submit">
+              <a class="fas fa-shopping-cart"></a>
+            </button>
+          </form>
+        </div>
+        <div class="content">
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h3>
+            <%= names[8] %>
+          </h3>
+
+          <span class="price">
+            <%= cost[8]%>
+          </span>
+          <select>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- menu section ends -->
+
+  <section class="footer" style="background-color: black">
+    <div class="container-fluid" style="background-color: black">
+      <a onclick="facebookId()" class="fa-brands fa-facebook-square" aria-hidden="true" style="color: aqua"></a>
+      <a onclick="twitterId()" class="fa-brands fa-twitter" style="color: aqua"></a>
+      <a onclick="emailId()" class="fa-brands fa-envelope" style="color: aqua"></a>
+      <a onclick="instaId()" class="fa-brands fa-instagram" style="color: aqua"></a><br />
+
+      <a href="AboutUs/aboutus.html" style="color: aqua">About Us</a>
+      <a href="FAQ PAGE/faq.html" style="color: aqua">FAQ</a>
+      <a href="Term of use/termsofuse.html" style="color: aqua">Terms of Use</a>
+      <a href="Privacy/privacy.html" style="color: aqua">Privacy Policy</a><br />
+
+      <p style="color: aqua">© Copyright Man-O-Wear</p>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <!--Custom js file link-->
+  <script src="website.js"></script>
+</body>
+
+</html>

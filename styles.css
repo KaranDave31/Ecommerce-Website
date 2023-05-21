@@ -1,0 +1,577 @@
+/* new css */
+body {
+  background-color: #FBEAEB;
+}
+
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  background: #2F3C7E;
+  color: #FBEAEB;
+  z-index: 999;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+
+
+.logo {
+  width: 150px;
+  height: 70px;
+  opacity: 0.7;
+  padding-left: 20px;
+  padding-left: 20px;
+  border-radius: 40%;
+}
+
+.logo:hover {
+  opacity: 1;
+}
+
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+li {
+  list-style: none;
+  padding: 0 30px;
+  position: relative;
+
+}
+
+#search li {
+  list-style: none;
+  padding: 0 5px;
+  position: relative;
+}
+
+#navbar li a,
+span {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: #FBEAEB;
+  transition: 0.2s ease;
+}
+
+#navbar li a:hover,
+span:hover,
+#navbar li a:active,
+span:active {
+  color: #13a298;
+
+}
+
+#search {
+  padding: 10px;
+}
+
+#hero {
+  background-image: url('/images/hp 2.jpg');
+  width: 100%;
+  height: 90vh;
+  background-size: cover;
+  padding: 0 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  font-family: "Montserrat-bold";
+}
+
+#hero h4 {
+  padding-bottom: 10px;
+  color: #1db1a7;
+}
+
+#hero button {
+  background-image: url('/images/button.png');
+  border: 0;
+  background-color: transparent;
+  color: #088178;
+  padding: 14px 80px 14px 65px;
+  background-repeat: no-repeat;
+}
+
+.bestProducts {
+  /* background-color: #FFF7E9; */
+  background-color: #4c5db6;
+  padding: 30px;
+  /* margin: 50px 0; */
+}
+
+.bestImageHeadphone {
+  height: 100vh;
+  padding: 20px;
+
+}
+
+.bestImageKeyboard {
+  height: 40vh;
+  padding: 20px;
+}
+
+.bestImageMouse {
+  height: 70vh;
+
+  padding: 20px;
+}
+
+.bestText {
+  text-align: center;
+}
+
+
+
+/* headphones - pro2 */
+/* keyboard - pro */
+/* mouse - pro3 */
+.pro {
+  width: 20%;
+  height: 350px;
+  min-width: 250px;
+  padding: 10px 12px;
+  border: 1px solid #f1f1f1;
+  text-align: center;
+  border-radius: 25px;
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+  margin: 25px 15px;
+  transition: 0.2s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.pro2 {
+  width: 20%;
+  height: 450px;
+  min-width: 250px;
+  padding: 10px 12px;
+  border: 1px solid #f1f1f1;
+  text-align: center;
+  border-radius: 25px;
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+  margin: 25px 15px;
+  transition: 0.2s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.pro3 {
+  width: 20%;
+  height: 450px;
+  min-width: 250px;
+  padding: 10px 12px;
+  border: 1px solid #f1f1f1;
+  text-align: center;
+  border-radius: 25px;
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+  margin: 25px 15px;
+  transition: 0.2s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.pro-container {
+  padding: 15px;
+}
+
+.pro2-container {
+  padding: 15px;
+}
+
+.pro3-container {
+  padding: 15px;
+}
+
+.product1 {
+  display: flex;
+  padding: 20px;
+}
+
+.product1 .pro:hover {
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.6);
+  /* width: 55%; */
+}
+
+.product1 .pro2:hover {
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.6);
+  /* width: 55%; */
+}
+
+.product1 .pro3:hover {
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.6);
+  /* width: 55%; */
+}
+
+.product1 .pro img {
+  width: 100%;
+  border-radius: 20px;
+  margin: 15px 5px;
+}
+
+.product1 .pro2 img {
+  width: 100%;
+  border-radius: 20px;
+  margin: 15px 5px;
+}
+
+.product1 .pro3 img {
+  width: 100%;
+  border-radius: 20px;
+  margin: 15px 5px;
+}
+
+.pro .des {
+  /* text-align: start; */
+  padding: 10px 0;
+}
+
+.pro2 .des {
+  /* text-align: start; */
+  padding: 10px 0;
+}
+
+.pro3 .des {
+  /* text-align: start; */
+  padding: 10px 0;
+}
+
+.pro span {
+  color: #4a5b66;
+  font-size: 14px;
+}
+
+.pro2 span {
+  color: #4a5b66;
+  font-size: 14px;
+}
+
+.pro3 span {
+  color: #4a5b66;
+  font-size: 14px;
+}
+
+.pro h5 {
+  padding-top: 7px;
+  color: #1a1a1a;
+  text-align: left;
+  font-size: 16px;
+}
+
+.pro2 h5 {
+  padding-top: 7px;
+  color: #1a1a1a;
+  text-align: left;
+  font-size: 16px;
+}
+
+.pro3 h5 {
+  padding-top: 7px;
+  color: #1a1a1a;
+  text-align: left;
+  font-size: 16px;
+}
+
+.pro .CART {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50px;
+  font-weight: 500;
+  background-color: #e8f6ea;
+  bottom: 130px;
+  right: 20px;
+  position: absolute;
+  border: 1px solid #cce7d0;
+  color: #088178;
+}
+
+.pro2 .CART {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50px;
+  font-weight: 500;
+  background-color: #e8f6ea;
+  bottom: 100px;
+  right: 20px;
+  position: absolute;
+  border: 1px solid #cce7d0;
+  color: #088178;
+}
+
+.pro3 .CART {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50px;
+  font-weight: 500;
+  background-color: #e8f6ea;
+  bottom: 140px;
+  right: 20px;
+  position: absolute;
+  border: 1px solid #cce7d0;
+  color: #088178;
+}
+
+
+.CART:hover {
+  line-height: 40px;
+  border-radius: 30px;
+  font-weight: 500;
+  background-color: #14c92f;
+  border: 1px solid #cce7d0;
+  color: #082e2c;
+}
+
+.pro .btn {
+  margin-left: 55px;
+  margin-top: 20px;
+  text-align: center;
+  background-color: #14c92f;
+}
+
+.pro .btn:hover {
+  text-align: center;
+  background-color: #2d6436;
+}
+
+.pro2 .btn {
+  margin-left: 55px;
+  margin-top: 20px;
+  text-align: center;
+  background-color: #14c92f;
+}
+
+.pro2 .btn:hover {
+  text-align: center;
+  background-color: #2d6436;
+}
+
+.pro3 .btn {
+  margin-left: 55px;
+  margin-top: 20px;
+  text-align: center;
+  background-color: #14c92f;
+}
+
+.pro3 .btn:hover {
+  text-align: center;
+  background-color: #2d6436;
+}
+
+.buttonsee {
+  float: right;
+
+}
+
+
+.sectionCustomize {
+  background-image: url('/images/customize.jpg');
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 60vh;
+  background-size: 1200px;
+  color: #e3e6f3;
+  margin: 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+
+
+.sectionCustomize h4 {
+  color: #e3e6f3;
+  margin: 80px 40px;
+  position: absolute;
+}
+
+.sectionCustomize button {
+  color: #e3e6f3;
+  margin: 40px;
+  position: absolute;
+  padding: 0;
+}
+
+.reviews {
+  text-align: center;
+  padding: 40px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  font-size: 20px;
+  justify-content: center;
+  vertical-align: middle;
+  background-color: #4261ae;
+  margin: 30px;
+}
+
+.testimonial-image {
+  width: 10%;
+  margin: 20px;
+  border-radius: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* old css */
+
+
+.navicon {
+  font-size: 1.8rem;
+  float: right;
+  padding: 10px;
+}
+
+
+
+
+
+.btn {
+  align-items: baseline;
+  position: relative;
+  justify-content: flex-end;
+  display: flex;
+}
+
+
+
+.bestKeyboardsImage {
+  width: 400px;
+
+}
+
+.img1btn {
+  position: absolute;
+  border-radius: 15px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 16px;
+  background-color: transparent;
+  padding: 12px 24px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+
+}
+
+.img1btn:hover {
+  background: #4a5b66;
+  text-decoration: none;
+}
+
+
+
+.container3 {
+  display: flex;
+  padding: 20px 10px;
+  background-color: antiquewhite;
+}
+
+
+.card-title {
+  padding: 10px;
+}
+
+.card {
+  padding: 40px;
+  text-align: center;
+  margin: 20px;
+  width: 400px;
+  background-color: #C4DDFF;
+  border: 2px solid black;
+}
+
+.card:hover {
+  padding: 50px;
+  text-align: center;
+  margin: 30px;
+  width: 500px;
+  background-color: aqua;
+}
+
+.cardmain {
+  padding: 40px;
+  text-align: center;
+  margin: 20px;
+  width: 400px;
+  background-color: aqua;
+}
+
+table,
+td,
+tr {
+  padding: 10px;
+
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+

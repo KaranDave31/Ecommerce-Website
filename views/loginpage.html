@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecommerce Website</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="/css/maincss.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="mainjs.js"></script>
+    <script>
+      function validateform() {
+        var username = document.myform.username.value;
+        var password = document.myform.password.value;
+
+        if (username == null || username == "") {
+          alert("Name can't be blank");
+          return false;
+        } else if (password.length < 8) {
+          alert("Password must be at least 8 characters long.");
+          return false;
+        }
+      }
+    </script>
+    <style>
+      h1,
+      label {
+        color: white;
+      }
+    </style>
+    <style media="screen">
+      *,
+      *:before,
+      *:after {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-image: url("/images/loginbg.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .background {
+        width: 430px;
+        height: 520px;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+      }
+
+      .background {
+        height: 300px;
+        width: 300px;
+        position: absolute;
+        border-radius: 50%;
+      }
+
+      form {
+        height: 520px;
+        width: 400px;
+        background-color: rgba(255, 255, 255, 0.13);
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 55%;
+        left: 80%;
+        border-radius: 10px;
+        backdrop-filter: blur(20px);
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+        padding: 50px 35px;
+      }
+
+      form * {
+        color: #ffffff;
+        letter-spacing: 0.5px;
+        outline: none;
+        border: none;
+      }
+
+      form h3 {
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 42px;
+        text-align: center;
+      }
+
+      label {
+        display: block;
+        margin-top: 30px;
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      input {
+        display: block;
+        height: 50px;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.07);
+        border-radius: 3px;
+        padding: 0 10px;
+        margin-top: 8px;
+        font-size: 14px;
+        font-weight: 300;
+      }
+
+      ::placeholder {
+        color: #e5e5e5;
+      }
+
+      button {
+        margin-top: 50px;
+        width: 100%;
+        background-color: #ffffff;
+        color: #080710;
+        padding: 15px 0;
+        font-size: 18px;
+        font-weight: 600;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--Header Section (Brand Name and Navbar)-->
+    <header>
+      <div>
+        <img src="/images/logo.png" width="30px" />
+        <a href="/aboutus" class="title">MAN-O-WEAR</a>
+      </div>
+      <nav class="navbar">
+        <a href="/index">HOME</a>
+
+        <div class="dropdown">
+          <a href="/views/grooming" class="dropbtn">GROOMING</a>
+          <!-- <div class="dropdown-content">
+                  <a href="#">Link 1</a>
+                  <a href="#">Link 2</a>
+                  <a href="#">Link 3</a>
+              </div> -->
+        </div>
+
+        <div class="dropdown">
+          <a href="/views/gyming" class="dropbtn">GYMMING</a>
+          <!-- <div class="dropdown-content">
+                  <a href="#">Link 1</a>
+                  <a href="#">Link 2</a>
+                  <a href="#">Link 3</a>
+              </div> -->
+        </div>
+        <div class="dropdown">
+          <a href="/views/review">REVIEWS</a>
+        </div>
+      </nav>
+
+      <!--Shopping Cart and Search Bar and Account-->
+      <div class="icons">
+        <i class="fas fa-shopping-cart"></i>
+        <a href="/views/loginpage"><i class="fas fa-user"></i></a>
+      </div>
+    </header>
+
+    <!--Sign in form-->>
+    <form
+      name="myform"
+      onsubmit="return validateform()"
+      action="/login"
+      method="post"
+      style="padding-top: 100px"
+    >
+      <h3>Join Us Now!</h3>
+
+      <label>Username</label>
+      <input
+        type="text"
+        placeholder="Username or Email"
+        id="username"
+        name="username"
+      />
+
+      <label>Password</label>
+      <input
+        type="password"
+        placeholder="Enter Password"
+        id="password"
+        name="password"
+      />
+
+      <input type="submit" class="button" value="LOGIN" />
+      <!-- <button>Log In</button> -->
+    </form>
+  </body>
+</html>
